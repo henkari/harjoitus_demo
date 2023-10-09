@@ -1,12 +1,11 @@
-// ListFiles.js
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import PropTypes from 'prop-types';
 import FileDownload from 'js-file-download';
 
-function ListFiles({category, onFileOpened }) {
+function ListFiles({ category, onFileOpened }) {
   const [files, setFiles] = useState([]);
-  
+
   useEffect(() => {
     async function fetchFiles() {
       try {
@@ -14,7 +13,7 @@ function ListFiles({category, onFileOpened }) {
         const apiUrl = `http://localhost:3001/api/files/${category}`;
         const response = await axios.get(apiUrl);
         setFiles(response.data);
-        onFileOpened();
+        
       } catch (error) {
         console.error('Error fetching files:', error);
       }
@@ -30,7 +29,7 @@ function ListFiles({category, onFileOpened }) {
       const response = await axios.get(apiUrl, { responseType: 'blob' });
       FileDownload(response.data, filename);
       alert('File downloaded successfully');
-      onFileOpened();
+      
     } catch (error) {
       console.error('Error downloading file:', error);
     }

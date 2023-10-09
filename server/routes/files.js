@@ -9,11 +9,19 @@ const router = express.Router();
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
     // Determine the destination based on the route
-    if (req.baseUrl === '/sopimus') {
-      cb(null, 'uploads/sopimus');
-    } else if (req.baseUrl === '/lasku') {
-      cb(null, 'uploads/lasku');
+    let destinationPath;
+    if (req.path === '/sopimus') {
+      destinationPath = 'uploads/sopimus';
+    } else if (req.path === '/lasku') {
+      destinationPath = 'uploads/lasku';
+    } else {
+      // Default destination if the path is not recognized
+      destinationPath = 'uploads/default';
     }
+
+    // Use the destination path to save the file
+    cb(null, destinationPath);
+    
   },
   filename: function (req, file, cb) {
     cb(null, file.originalname);
@@ -65,7 +73,7 @@ try {
 });
 
 // Define routes to fetch files by category 
-router.get('/:category', async (req, res) => {
+router.get('/api/files/:category', async (req, res) => {
     const category = req.params.category;
     try {
       const files = await File.find({ category: category });
@@ -95,7 +103,9 @@ router.get('/download/:category/:filename', (req, res) => {
     
     const category = req.params.category;
     const filename = req.params.filename;
-    const filePath = path.join(__dirname, category, filename);
+    const destinationPath = path.join('uploads', category); // Updated
+    console.log(destinationPath)
+    const filePath = path.join(destinationPath, filename); // Updated
     res.download(filePath);
 });
 
