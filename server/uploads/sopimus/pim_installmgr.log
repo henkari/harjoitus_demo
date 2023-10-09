@@ -1,0 +1,44 @@
+  PTC Installation assistant log file
+========= PIM Version: 2.17.0 ==========
+ke maalis 22 16:42:01 23
+=======================================
+Loaded product definition file: C:\PTC\Creo2\Creo 2.0\Simulate\bin\pim\xml\sim.p.xml.
+Removed the directory C:\PTC\Creo2\Creo 2.0\Common Files\M170\apps.
+Removed the directory C:\PTC\Creo2\Creo 2.0\Common Files\M170\apps_data.
+Removed the directory C:\PTC\Creo2\Creo 2.0\Common Files\M170\creo_standards.
+Removed the directory C:\PTC\Creo2\Creo 2.0\Common Files\M170\CustomLoad.
+Removed the directory C:\PTC\Creo2\Creo 2.0\Common Files\M170\demos.
+Removed the directory C:\PTC\Creo2\Creo 2.0\Common Files\M170\efx.
+Removed the directory C:\PTC\Creo2\Creo 2.0\Common Files\M170\formats.
+Removed the directory C:\PTC\Creo2\Creo 2.0\Common Files\M170\graphic-library.
+Removed the directory C:\PTC\Creo2\Creo 2.0\Common Files\M170\help.
+Removed the directory C:\PTC\Creo2\Creo 2.0\Common Files\M170\html.
+Removed the directory C:\PTC\Creo2\Creo 2.0\Common Files\M170\includes.
+Removed the directory C:\PTC\Creo2\Creo 2.0\Common Files\M170\install.
+Removed the directory C:\PTC\Creo2\Creo 2.0\Common Files\M170\intudfs.
+Removed the directory C:\PTC\Creo2\Creo 2.0\Common Files\M170\jlink.
+Removed the directory C:\PTC\Creo2\Creo 2.0\Common Files\M170\libs.
+Removed the directory C:\PTC\Creo2\Creo 2.0\Common Files\M170\manifests.
+Removed the directory C:\PTC\Creo2\Creo 2.0\Common Files\M170\manikin_lite.
+Removed the directory C:\PTC\Creo2\Creo 2.0\Common Files\M170\mech.
+Removed the directory C:\PTC\Creo2\Creo 2.0\Common Files\M170\mfg_cmdsyn.
+Removed the directory C:\PTC\Creo2\Creo 2.0\Common Files\M170\mfg_cmdsyn_ai.
+Removed the directory C:\PTC\Creo2\Creo 2.0\Common Files\M170\modchk.
+Removed the directory C:\PTC\Creo2\Creo 2.0\Common Files\M170\proe.
+Removed the directory C:\PTC\Creo2\Creo 2.0\Common Files\M170\proole.
+Removed the directory C:\PTC\Creo2\Creo 2.0\Common Files\M170\protable.
+Removed the directory C:\PTC\Creo2\Creo 2.0\Common Files\M170\protoolkit.
+Removed the directory C:\PTC\Creo2\Creo 2.0\Common Files\M170\PRO_APPT.
+Removed the directory C:\PTC\Creo2\Creo 2.0\Common Files\M170\symbols.
+Removed the directory C:\PTC\Creo2\Creo 2.0\Common Files\M170\templates.
+Removed the directory C:\PTC\Creo2\Creo 2.0\Common Files\M170\text.
+Removed the directory C:\PTC\Creo2\Creo 2.0\Common Files\M170\tol_tables.
+Removed the directory C:\PTC\Creo2\Creo 2.0\Common Files\M170\usrprog.
+Removed the directory C:\PTC\Creo2\Creo 2.0\Common Files\M170\weblink.
+Removed the directory C:\PTC\Creo2\Creo 2.0\Common Files\M170\x86e_win64.
+Removed script simulate.psf.
+Removed script simulate.bat.
+Removed script convert_image.bat.
+Removed the directory C:\PTC\Creo2\Creo 2.0\Simulate\install.
+Removed the directory C:\PTC\Creo2\Creo 2.0\Simulate\text.
+Uninstall information removed from the registry for Creo Simulate Version 2.0 Datecode [M170].

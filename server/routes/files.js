@@ -73,7 +73,7 @@ try {
 });
 
 // Define routes to fetch files by category 
-router.get('/api/files/:category', async (req, res) => {
+router.get('/:category', async (req, res) => {
     const category = req.params.category;
     try {
       const files = await File.find({ category: category });
@@ -87,16 +87,7 @@ router.get('/api/files/:category', async (req, res) => {
     }
 });
 
-router.get('/sop', async (req, res) => {
-    const category = 'sopimus'
-  try {
-    const files = await File.find({ category: category });
-    res.status(200).json(files);
-  } catch (error) {
-    console.error('Error fetching files:', error);
-    res.status(500).json({ error: 'Internal server error' });
-  }
-});
+
 
 // File download route
 router.get('/download/:category/:filename', (req, res) => {

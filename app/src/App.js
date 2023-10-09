@@ -27,7 +27,7 @@ function App(){
         </Accordion.Header>
         <Accordion.Body>
             <FileUpload category="sopimus" />
-            
+            <ListFiles category="sopimus" /> 
         </Accordion.Body>
       </Accordion.Item>
     </Accordion>

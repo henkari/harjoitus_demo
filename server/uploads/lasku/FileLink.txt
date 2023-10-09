@@ -1,0 +1,31 @@
+const express = require('express');
+const fs = require('fs');
+const path = require('path');
+
+const app = express();
+const port = 3000;
+
+const directoryPath = __dirname; // Replace with your desired directory path
+
+app.get('/', (req, res) => {
+  // Read the directory and get a list of files
+  fs.readdir(directoryPath, (err, files) => {
+    if (err) {
+      console.error('Error reading directory:', err);
+      return res.status(500).send('Error reading directory');
+    }
+
+    // Generate a list of links to the files
+    const fileLinks = files.map((file) => {
+      const filePath = path.join(directoryPath, file);
+      return `<a href="${filePath}">${file}</a>`;
+    });
+
+    // Send the HTML response with the list of links
+    res.send(`<html><body>${fileLinks.join('<br>')}</body></html>`);
+  });
+});
+
+app.listen(port, () => {
+  console.log(`Server is running on http://localhost:${port}`);
+});
