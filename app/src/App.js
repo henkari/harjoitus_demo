@@ -1,37 +1,39 @@
 import './App.css';
-import FileUpload from './components/FileUpload';
-import ListFiles from './components/ListFiles';
-import React from 'react';
-import Accordion from 'react-bootstrap/Accordion';
+//import FileUpload from './components/FileUpload';
+//import ListFiles from './components/ListFiles';
+import React, {useState, useEffect} from 'react';
+import AddCategory from './components/AddCategory'
+import AccordionData from'./components/AccordionData'
 
-
-function App(){
+function App() {
+  const initialCategories = JSON.parse(localStorage.getItem('categories')) || [];
+  const [categories, setCategories] = useState(initialCategories);
   
+  useEffect(() => {
+    // Update localStorage whenever categories change
+    localStorage.setItem('categories', JSON.stringify(categories));
+  }, [categories]);
 
-  return (
+  const addNewCategory = (newCategory) => {
+    setCategories((prevCategories) => [
+      ...prevCategories,
+      { name: newCategory, key: newCategory.toLowerCase() },
+    ]);
+  };
+  const clearCategories = () => {
+    setCategories([]);
+  };
+    return (
       
     <div className='app'>
-    <Accordion defaultActiveKey="0">
-      <Accordion.Item eventKey="0">
-        <Accordion.Header>Laskut<span className="badge">{0}</span>
-        </Accordion.Header>
-        <Accordion.Body>
-        <FileUpload category="lasku"/>
-        <ListFiles category="lasku" />  
-        </Accordion.Body>
-      </Accordion.Item>
+      <AddCategory addNewCategory={addNewCategory}/>
+      <button onClick={clearCategories}>Clear Categories</button>
       
-      <Accordion.Item eventKey="1">
-        <Accordion.Header>Sopimukset <span className="badge">{0}</span>
-
-        </Accordion.Header>
-        <Accordion.Body>
-            <FileUpload category="sopimus" />
-            <ListFiles category="sopimus" /> 
-        </Accordion.Body>
-      </Accordion.Item>
-    </Accordion>
-  </div>
+      {categories.map((category, index) => (
+        <AccordionData key={category.key} category={category.key} />
+      ))}
+      
+      </div>
   );
 }
 
